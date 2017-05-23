@@ -1,0 +1,53 @@
+<img src="../public/assets/images/sushi_belt.gif" alt="conveyor belt sushi">
+<header>
+	<h1>GRAB-DAT-SUSHI!</h1>
+</header>
+
+<div id="available">
+	<h2>ON SUSHI CONVEYOR BELT</h2>
+	<ul>
+		{{#each sushis}}
+			{{#unless this.devoured}}
+				<li> 
+					{{this.sushi_name}}
+
+					<form action="/{{this.id}}?_method=PUT" method="POST">
+						<input type="hidden" name="devoured" value="true">
+						<button type="submit">GRAB IT!</button>
+					</form>
+				</li>	
+			{{/unless}}
+		{{/each}}		
+	</ul>
+</div>
+
+<div id="grabbed">
+	<h2>GRABBED</h2>
+	<ul>
+		{{#each sushis}}
+			{{#if this.devoured}}
+				<li>
+					{{this.sushi_name}}
+	
+					<form action="/{{this.id}}?_method=PUT" method="POST">
+						<input type="hidden" name="devoured" value="false">
+						<button type="submit">PUT IT BACK</button>
+					</form>
+				</li>
+			{{/if}}
+		{{/each}}
+	</ul>
+</div>
+
+<div id="menu">
+	<h2>MENU</h2>
+	<img src="../public/assets/images/kawai_sushi.jpg" alt="sushi menu">
+</div>
+
+<div id="order">
+	<h2>PLACE AN ORDER WITH THE CHEF</h2>
+	<form id="orderSushi" action="/" method="POST">
+		<textarea class="form-control" rows="3"></textarea>
+		<button type="submit" class="btn btn-default btn-lg">Place My Order</button>
+	</form>
+</div>	
