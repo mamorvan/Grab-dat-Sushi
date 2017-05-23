@@ -16,9 +16,9 @@ var orm = {
 
 	insertOne: function(table, column, order, callback) {
 		var query = connection.query("INSERT INTO " + table 
-			+ " (" + column.toString() + ")"  
-			+ "VALUES (" + order.toString() + ");" 
-		, function(err, data) {
+			+ " (" + column.toString() + ") "  
+			+ "VALUES (?);"  
+		, order, function(err, data) {
 			if (err) throw err;
 			callback(data);
 			console.log(query.sql);

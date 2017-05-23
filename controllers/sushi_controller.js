@@ -8,7 +8,6 @@ router.get("/", function(req, res) {
 		var sushiObject = {
 			sushis : data
 		};
-		console.log("sushiObject: " + sushiObject);
 		res.render("index", sushiObject);
 	});
 });
