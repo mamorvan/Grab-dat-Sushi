@@ -15,14 +15,14 @@ router.get("/", function(req, res) {
 
 //to add new sushi to db then show new all sushi with redirect to get
 router.post("/", function(req, res) {
-	sushi.insertOne(rep.body.order, function(){
+	sushi.insertOne(req.body.order, function(){
 		res.redirect("/");
 	});
 });
 
 //to update a sushi to grabbed then show updated results from db with redirect to get
 router.put("/:id", function(req, res) {
-	sushi.updateOne(req.params.id, function() {
+	sushi.updateOne(req.body.devoured,req.params.id, function() {
 		res.redirect("/");
 	});
 });

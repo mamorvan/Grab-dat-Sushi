@@ -14,8 +14,8 @@ var sushi = {
 
 
 	},
-	updateOne: function(id, callback) {
-		orm.updateOne("sushi", "devoured", "true", "id", id, function(data){
+	updateOne: function(columnValue, id, callback) {
+		orm.updateOne("sushi", "devoured", columnValue, "id", id, function(data){
 			callback(data);
 		});
 	}

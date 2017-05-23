@@ -14,10 +14,10 @@ var orm = {
 
 	},
 
-	insertOne: function(table, column, value, callback) {
+	insertOne: function(table, column, order, callback) {
 		var query = connection.query("INSERT INTO " + table 
 			+ " (" + column.toString() + ")"  
-			+ "VALUES (" + value.toString() + ");" 
+			+ "VALUES (" + order.toString() + ");" 
 		, function(err, data) {
 			if (err) throw err;
 			callback(data);
@@ -26,7 +26,7 @@ var orm = {
 	},
 
 	updateOne: function(table, column, columnValue, conditionColumn, conditionValue, callback) {
-		connection.query("UPDATE " + table 
+		var query = connection.query("UPDATE " + table 
 			+ " SET " + column + "=" + columnValue 
 			+ " WHERE " + conditionColumn + "=" + conditionValue + ";"
 			, function(err, data){

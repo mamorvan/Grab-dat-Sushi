@@ -63,8 +63,12 @@ header {
 	border-radius: 5px;
 	text-align: center;
 	padding: 30px;
-	height: 500px;
+	height: 450px;
 	margin-bottom: 80px;
+}
+
+.img-thumbnail {
+	max-height: 300px;
 }
 
 #order textarea {
