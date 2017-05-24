@@ -11,8 +11,6 @@ var sushi = {
 		orm.insertOne("sushi", "sushi_name", order, function(data){
 			callback(data);
 		});
-
-
 	},
 	updateOne: function(columnValue, id, callback) {
 		orm.updateOne("sushi", "devoured", columnValue, "id", id, function(data){

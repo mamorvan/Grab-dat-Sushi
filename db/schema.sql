@@ -3,9 +3,9 @@ USE sushi_db;
 
 CREATE table sushi 
 (
-	id INT NOT NULL AUTO_INCREMENT,
-	sushi_name VARCHAR(255) NOT NULL,
+	id INT AUTO_INCREMENT NOT NULL,
+	sushi_name VARCHAR(255),
 	devoured BOOLEAN DEFAULT false,
-	date TIMESTAMP,
+	createdAt TIMESTAMP NOT NULL,
 	PRIMARY KEY (id) 
 );
