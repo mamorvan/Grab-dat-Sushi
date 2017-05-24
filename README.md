@@ -1,5 +1,5 @@
 # :bento: Grab-dat-Sushi :bento:
-___
+
 ### Grab-dat-Sushi lets you grab some sushi conveyor belt style. 
 
 **You can put the sushi back on the conveyor belt if you change your mind but please don't nibble it first!**  
