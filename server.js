@@ -5,7 +5,7 @@ var path = require("path");
 var expressHandlebars = require("express-handlebars");
 var routes = require("./controllers/sushi_controller.js");
 
-var port = process.env.port || 8080;
+var port = process.env.PORT || 8080;
 
 var app = express();
 
